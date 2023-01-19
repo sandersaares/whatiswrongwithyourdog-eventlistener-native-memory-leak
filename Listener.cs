@@ -6,6 +6,9 @@ internal class Listener : EventListener
     {
         base.OnEventSourceCreated(eventSource);
 
+        if (eventSource.Name != nameof(MyEventSource))
+            return;
+
         EnableEvents(eventSource, EventLevel.Informational, EventKeywords.None, new Dictionary<string, string?>()
         {
             ["EventCounterIntervalSec"] = "1"

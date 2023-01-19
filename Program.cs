@@ -25,4 +25,7 @@ app.MapRazorPages();
 // Start an event listener that just subscribes and does nothing with the events.
 var listener = new Listener();
 
+// And start producing some event counter data.
+new MyEventSource();
+
 app.Run();
